@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Caveat:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-primary: #2c4360;
+  --color-secondary: #56bda5;
+  --color-accent-red: #b14b3a;
+  --color-accent-yellow: #c8a34d;
+  --color-accent-green: #22c55e;
+  --color-light: #f6f7f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #f6f7f7;
+  color: #2c4360;
+  line-height: 1.6;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+/* Custom gradient backgrounds */
+.gradient-hero {
+  background: linear-gradient(135deg, #2c4360 0%, #56bda5 50%, #22c55e 100%);
+}
+
+.gradient-section {
+  background: linear-gradient(180deg, #e8f5e9 0%, #f6f7f7 100%);
+}
+
+/* Animated background pattern */
+.pattern-bg {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(86, 189, 165, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(44, 67, 96, 0.05) 0%, transparent 50%);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(44, 67, 96, 0.15);
+}
+
+/* Topic cards gradient borders */
+.topic-card {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.topic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #22c55e, #56bda5, #2c4360);
+}
+
+/* Countdown timer styling */
+.countdown-box {
+  background: linear-gradient(145deg, #2c4360, #1a2a40);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(44, 67, 96, 0.3);
+}
+
+/* Partner logos */
+.partner-logo {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f6f7f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #56bda5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c4360;
+}
+
+/* Swiper custom styles */
+.partners-swiper,
+.sponsors-swiper {
+  padding: 10px 5px 50px 5px;
+}
+
+.partners-swiper .swiper-button-next,
+.partners-swiper .swiper-button-prev,
+.sponsors-swiper .swiper-button-next,
+.sponsors-swiper .swiper-button-prev {
+  color: #22c55e;
+  background: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.partners-swiper .swiper-button-next:hover,
+.partners-swiper .swiper-button-prev:hover,
+.sponsors-swiper .swiper-button-next:hover,
+.sponsors-swiper .swiper-button-prev:hover {
+  background: #22c55e;
+  color: white;
+  transform: scale(1.1);
+}
+
+.partners-swiper .swiper-button-next::after,
+.partners-swiper .swiper-button-prev::after,
+.sponsors-swiper .swiper-button-next::after,
+.sponsors-swiper .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.partners-swiper .swiper-pagination-bullet,
+.sponsors-swiper .swiper-pagination-bullet {
+  background: #2c4360;
+  opacity: 0.3;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.partners-swiper .swiper-pagination-bullet-active,
+.sponsors-swiper .swiper-pagination-bullet-active {
+  background: #22c55e;
+  opacity: 1;
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* Marquee animation for collaborators */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
